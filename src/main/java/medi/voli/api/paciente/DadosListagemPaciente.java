@@ -1,0 +1,11 @@
+package medi.voli.api.paciente;
+
+import jakarta.validation.constraints.NotBlank;
+import medi.voli.api.medico.DadosListagemMedico;
+
+public record DadosListagemPaciente(Long id, String nome, String email, String cpf) {
+    public DadosListagemPaciente(Paciente paciente){
+        this(paciente.getId(), paciente.getNome(), paciente.getEmail(), paciente.getCpf());
+    }
+
+}
